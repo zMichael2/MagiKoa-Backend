@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const contentRegister_controller_1 = require("../controllers/contentRegister.controller");
+const recordRouter = (0, express_1.Router)();
+recordRouter.get("/employees", contentRegister_controller_1.getEmployees);
+recordRouter.post("/register/appointment", contentRegister_controller_1.registerAppointment);
+recordRouter.post("/register/payment", contentRegister_controller_1.registerPayment);
+recordRouter.post("/update/appointment", contentRegister_controller_1.updateAppointment);
+recordRouter.post("/update/payment", contentRegister_controller_1.updatePayment);
+recordRouter.get("/delete/appointment/:id", contentRegister_controller_1.deleteAppointment);
+recordRouter.get("/delete/payment/:id", contentRegister_controller_1.deletePayment);
+recordRouter.get("/Appointments", contentRegister_controller_1.getAppointments);
+recordRouter.get("/Payments", contentRegister_controller_1.getPayments);
+recordRouter.get("/datepayment", contentRegister_controller_1.getDatePayment);
+exports.default = recordRouter;
